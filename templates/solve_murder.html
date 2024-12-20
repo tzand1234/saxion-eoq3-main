@@ -1,0 +1,52 @@
+{% extends "layouts.html"%} {% block head %}
+<link rel="stylesheet" href="../static/solve_murder.css" />
+{% endblock %} {% block body %}
+<div class="outer-container">
+  <header>
+      <div class="item">
+          <img class="image" src="../static/img/7975662.png" alt="" width="15%" height="auto">
+          <p>Henk</p>
+      </div>
+      <nav>
+          <a href="">dashboard</a>
+          <a href="/signout">logout</a>
+          <a href="/solve_murder">Solve</a>
+      </nav>
+  </header>
+  <section class="container information"> 
+    <h2>Give your answer to who murdered the student</h2>
+    <form action="/solve_murder" method="post">
+      <label for="answer-input"></label>
+      <input type="text" name="" id="answer-input">
+      <input type="submit" id="submit-answer-btn" onclick="checkAnswer(event)" value="Submit">
+    </form>
+    <div id="answer-feedback"></div>
+
+  </section>
+  <a class="button" href="/">Start new game</a>
+</div>
+<script>
+  function checkAnswer(event) {
+      event.preventDefault();
+      var answerInput = document.getElementById("answer-input");
+      var userAnswer = answerInput.value.toLowerCase();
+      var expectedAnswer = "Tibor".toLowerCase();
+      var answerFeedback = document.getElementById("answer-feedback");
+
+      var incorrectAudio = new Audio('../static/sounds/In_De_Tram.mp3');
+
+      if (userAnswer === expectedAnswer) {
+          answerFeedback.innerHTML = "<p>Congratulations, Tibor was indeed the murderer he is going behind bars!</p><img src='../static/img/tibor_AI.png' width='50%' height='auto'>";
+
+          incorrectAudio.volume = 0.6;
+          incorrectAudio.play();
+      } else {
+        var incorrectAudio = new Audio('../static/sounds/Bon.mp3');
+          answerFeedback.innerHTML = "<p>Sorry, that's not the correct answer. Please try again.</p><img src='../static/img/DALLE_2023-04-25_10.17.33.png' width='50%' height='auto' style='border-radius:50%;'>";
+
+          incorrectAudio.volume = 0.6;
+          incorrectAudio.play();
+      }
+  }
+</script>
+{% endblock %}

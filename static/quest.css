@@ -1,0 +1,124 @@
+.outer-container{
+    background: rgb(60, 0, 5) ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100%;
+}
+
+header > .item{
+    display: flex;
+    align-items: center;
+}
+
+header > .item > p{
+    margin: 0;
+    color: white;
+    font-weight: 600;
+    margin-left: 12px;
+    margin-top: 2px;
+}
+
+.image{
+    margin-left: 10px;
+}
+
+header{
+    justify-content: space-between;
+    align-items: center;
+    background-color: #e31627;
+}
+
+header > nav {
+    margin-right: 20px;
+}
+
+.quest-description{
+    display: flex;
+    align-items: center;
+    width: 55%;
+}
+
+.reward-points{
+    width: 50%;
+}
+
+.reward-points > h4, p{
+    color:white;
+}
+
+.reward-points > h4{
+    margin-bottom: 0;
+    text-align: right;
+}
+
+.reward-points > p{
+    margin-top: 5px;
+    text-align: right;
+}
+
+.quest-description > p{
+    color: white;
+}
+
+img{
+    border-radius: 10px;
+}
+
+.quest-photo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+h1{
+    font-size: 1.4em;
+    text-align: center;
+}
+
+.information-container{
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+}
+
+.button{
+    padding: 12px;
+    background-color: #ff0016;
+    border-radius: 10px;
+    width: 100%;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: 700;
+    border: none;
+    width: 94%;
+    margin: 0 2px;
+}
+
+.set{
+    display: flex;
+    padding: 10px;
+    align-items: center;
+}
+
+.submit{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+
+.container-bottom{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+label{
+    color: white;
+}
+

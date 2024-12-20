@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "saxion-eoq3"
+version = "0.1.0"
+description = ""
+authors = ["leoniebe <leoniebekkernens@gmail.com>"]
+readme = "README.md"
+packages = [{include = "saxion_eoq3"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+flask = "^2.2.3"
+flask-sqlalchemy = "^3.0.3"
+postgresqlite = "^0.3.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

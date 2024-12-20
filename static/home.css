@@ -1,0 +1,52 @@
+
+.outer-container{
+    box-shadow: inset 0px 0px 277px 3px #380f1a;
+    background-image: url("../static/img/32133-ai.png");
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    background-color: #380f1a;
+}
+
+header{
+    background-color: #F23041;
+    border-radius: 0 0 10px 10px;
+}
+
+.container-header{
+    width: 100%;
+    text-align: center;
+}
+
+.inner-container-button{
+    position: absolute;
+    bottom: 15%;
+    width: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.inner-container-button > a{
+    padding: 12px;
+    background-color: #F23041;
+    border-radius: 10px;
+    width: 80%;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: 700;
+}
+
+.inner-container-button > .flash{
+    font-size: 1.2em;
+    font-weight: 800;
+    color: white;
+    list-style-type: none;
+    width: 80%;
+    text-align: center;
+    margin: 6px;
+}

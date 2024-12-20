@@ -1,0 +1,104 @@
+{%extends "layouts.html"%}
+    {% block head %}
+    <link rel="stylesheet" href="../static/team_dash.css">
+    {% endblock %}
+        {% block body %}
+        <div class="outer-container">
+            <header>
+                <div class="item">
+                    <img class="image" src="../static/img/7975662.png" alt="" width="15%" height="auto">
+                    <p>{{ player.team_name }}</p>
+                </div>
+                <nav>
+                    <a href="/{{player.team_name}}/dashboard">dashboard</a>
+                    <a href="/signout">logout</a>
+                    <a href="/{{player.team_name}}/solve_murder">Solve</a>
+                </nav>
+            </header>
+            <section class="container">
+                <div class="top-information">
+                    <h1>Story</h1>
+                    <div class="accordion-container">
+                        <button class="accordion active">Story</button>
+                        <div class="panel active">
+                            <p>It was a typical day at the software development school where Timothy taught. His students were working on a group project, and Timothy was circulating around the classroom, offering advice and guidance.
+    
+                                Suddenly, there was a loud noise from the back of the room. Everyone turned to see what had happened and saw that one of the students had fallen down the stairs. <br><br>
+                                Timothy was the closest to the scene and was suspected of having pushed the student down the stairs.
+                                
+                                The police were called, and they quickly arrived on the scene. 
+                                
+                                <br><br>They determined that the student had been pushed down the stairs and was in critical condition. Timothy was immediately considered a suspect.
+                                
+                                As the investigation unfolded, the police discovered that Timothy had been struggling with a gambling addiction and had been in debt to some dangerous people. They also found out that he had been having an affair with one of his students.
+                            </p>
+                        </div>
+                        
+                        <button class="accordion">Suspects</button>
+                        <div class="panel">
+                            <p>Here are some possible suspects and motives:
+                                <br><br>
+                                <strong>Remco, the victim's friend:</strong> Remco was friends with the victim and had seen Timothy arguing with him before the fall. He could have pushed Timothy to protect his friend.
+                                <br><br>
+                                <strong>Tibor, a fellow teacher:</strong> Tibor had been competing with Timothy for a promotion and was jealous of his success. He could have pushed the student to frame Timothy and eliminate the competition.
+                                <br><br>
+                                <strong>Frank, a loan shark:</strong> Frank had lent Timothy a large sum of money and was getting impatient for him to pay it back. He could have threatened Timothy to push the student and make it look like an accident.</p>
+                        </div>
+                        <button class="accordion">items</button>
+                        <div class="panel">
+                            <p>And here are some possible locations and items:
+
+                                <strong>The staircase:</strong> The crime took place on the staircase, and there could be clues hidden there that would reveal the identity of the killer.
+                                <br><br>
+                                <strong>Timothy's Macbook:</strong> Timothy always carried his computer with him and used it to teach his classes. It could contain emails, documents, and other evidence that could help solve the case.
+                                <br><br>
+                                <strong>Glasses:</strong> Timothy wears glasses and without them, he cannot see properly. If his glasses are missing or broken, he may have been more vulnerable to being attacked or could have accidentally pushed the student down the stairs.
+                                <br><br>
+                                <strong>Flash drive:</strong> Timothy often used a flash drive to transfer files between his computer and his students' computers. It could contain important information about his dealings with his students, colleagues, or creditors. It could also be a potential weapon if used to hit someone.
+                                <br><br>
+                                <strong>A gambling debt slip:</strong> Timothy had been known to gamble, and he could have a debt slip on him from one of his creditors. It could reveal something about his behavior and motivations.</p>
+                        </div>
+                    </div>
+                    <a class="button" href="/{{player.team_name}}/quest">Start solving</a>
+                    </div>
+                    <div class="inner-container">
+                        <h3>High scores</h3>
+                        <ul>
+                            <li>
+                                {% for high_score in high_scores %} {% if high_score.points %}
+                                {{ high_score.points }} {{ high_score.team_name }}
+                                {% endif %} {% endfor %}
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+            <script>
+                var acc = document.getElementsByClassName("accordion");
+                var i;
+
+                for (i = 0; i < acc.length; i++) {
+                    acc[i].addEventListener("click", function() {
+                    /* Get the panel and button elements */
+                    var panel = this.nextElementSibling;
+                    var prevPanel = document.querySelector(".panel.active");
+                    var prevButton = document.querySelector(".accordion.active");
+
+                    /* Remove the "active" class from the previously opened elements */
+                    if (prevPanel && prevButton) {
+                    prevPanel.classList.remove("active");
+                    prevButton.classList.remove("active");
+                    }
+
+                    /* Toggle the "active" class on the clicked elements */
+                    this.classList.toggle("active");
+                    if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                    } else {
+                    panel.style.display = "block";
+                    panel.classList.add("active"); // add "active" class to the panel
+                    }
+                });
+            }
+            </script>
+        {% endblock %}

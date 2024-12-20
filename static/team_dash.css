@@ -1,0 +1,126 @@
+.outer-container{
+    background: rgb(60, 0, 5) ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100%;
+}
+
+header > .item{
+    display: flex;
+    align-items: center;
+}
+
+header > .item > p{
+    margin: 0;
+    color: white;
+    font-weight: 600;
+    margin-left: 12px;
+    margin-top: 2px;
+}
+
+.image{
+    margin-left: 10px;
+}
+
+header{
+    justify-content: space-between;
+    align-items: center;
+    background-color: #e31627;
+}
+
+header > nav {
+    margin-right: 20px;
+}
+
+.top-information{
+    width: 95%;
+    height:fit-content;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.top-information > h1{
+    font-size: 2em;
+}
+
+.top-information > p{
+    font-size: 1em;
+    color: white;
+}
+
+.button{
+    padding: 12px;
+    background-color: #ff0016;
+    border-radius: 10px;
+    width: 100%;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: 700;
+    border: none;
+    width: 94%;
+}
+
+
+.accordion-container{
+    margin-bottom: 50px;
+    margin-top: 12px;
+}
+
+/* Style the buttons that are used to open and close the accordion panel */
+.accordion {
+    background-color: #f23041;
+    color: #fff;
+    cursor: pointer;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    width: 100%;
+    text-align: inherit;
+    padding: 10px;
+    font-size: 1em;
+    font-weight: 600;
+    font-family: monospace;
+}
+
+  /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .accordion:hover {
+    background-color: #ff0000;
+}
+
+  /* Style the accordion panel. Note: hidden by default */
+.panel {
+    padding: 0 18px;
+    background-color: white;
+    display: none;
+    overflow: hidden;
+}
+
+.panel.active{
+    display: block;
+}
+
+.inner-container{
+    width: 80%;
+    padding: 20px;
+    margin-top: 20px;
+    background-color: black;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+li {
+    color: white;
+    font-size: 1.2em;
+    list-style-type: none;
+}
+
+h3{
+    color: white;
+    margin-bottom: 15px;
+    text-align: left;
+}

@@ -1,0 +1,25 @@
+{% extends "layouts.html"%} 
+    {% block head %}
+    <link rel="stylesheet" href="../static/create.css" />
+    {% endblock %} 
+        {% block body %}
+            <div class="container">
+                <div class="inner-container">
+                    <h1>Create team name</h1>
+                    <img  class="image avatar" src="../static/img/7975662.png" alt="" width="60%" height="auto">
+                    <form action="/create" method="POST">
+                    <input type="text" name="team_name" required="required" placeholder="Team name" />
+                    <input type="password" name="team_password" required="required" placeholder="Team password" />
+                    <input class="button" type="submit" value="Create" />
+                    <a class="button" href="/change_password">New password</a>
+                    </form>
+                    {% with messages = get_flashed_messages() %} {% if messages %}
+                    <p class="flash">
+                      {% for message in messages %}
+                      {{ message }}
+                      {% endfor %}
+                    </p>
+                    {% endif %} {% endwith %}
+                </div>
+            </div>
+        {% endblock %}

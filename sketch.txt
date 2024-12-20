@@ -1,0 +1,35 @@
+tables:
+    player
+        id          serial PK
+        team_name   txt
+        points      int
+        items found int
+        quest completed int
+        inventory text
+
+    location
+        coordinates txt PK
+        quest_for_location int fk   
+
+    quests
+        id          serial PK
+        title       txt
+        reward_points      int
+        description txt
+        player_takes_part bool
+        answer      txt
+        completed bool
+        photo       img html
+        
+
+    items
+        id          serial PK
+        name        txt
+        description txt
+        quest_id    fk
+
+    quest_item
+        quest_id fk int
+        item_id fk int
+
+    
